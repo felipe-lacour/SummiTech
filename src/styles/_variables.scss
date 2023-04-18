@@ -1,0 +1,55 @@
+$negro: #231f20;
+$rojo: #ed1c24;
+
+body{
+  height: 100vh;
+  margin: 0px;
+  background-image: url('../img/layered-waves-haikei.svg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100%;
+}
+
+*{
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+@mixin flex ($flexDirection, $justifyContent, $alignItems){
+  display: flex;
+  @if $flexDirection != row {flex-direction: $flexDirection;}
+  @if $justifyContent != flex-start {justify-content: $justifyContent;}
+  @if $alignItems != stretch {align-items: $alignItems;}
+}
+
+// @include flex (row, flex-start, stretch);
+
+@mixin grid ($alignContent, $justifyContent, $rowGap, $columnGap, $gridColumns, $gridRows){
+  display: grid;
+  @if $alignContent != stretch {align-content: $alignContent;}
+  @if $justifyContent != flex-start{justify-content: $justifyContent;}
+  @if $rowGap != 0 {row-gap: $rowGap;}
+  @if $columnGap != 0 {column-gap: $columnGap;}
+  @if $gridColumns != none{grid-template-columns: $gridColumns;}
+  @if $gridRows != none {grid-template-rows: $gridRows;}
+}
+
+// @include grid (stretch, flex-start, 0, 0, none, none);
+
+@mixin hover ($a, $b){
+  transition: all 0.15s;
+  &:hover{
+    opacity: $a;
+  }
+  &:active{
+    opacity: $b;
+  }
+}
+
+.scrollbar{
+  &::-webkit-scrollbar{
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

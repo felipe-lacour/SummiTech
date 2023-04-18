@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 372 372">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #231f20;
+        stroke-width: 22px;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-3 {
+        stroke: #fff;
+      }
+
+      .cls-6 {
+        fill: #ed1c24;
+      }
+
+      .cls-2 {
+        stroke: #ed1c24;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        stroke-width: 20px;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        fill: none;
+      }
+
+      .cls-4, .cls-5 {
+        stroke: #231f20;
+      }
+
+      .cls-5 {
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <circle id="Circulo" class="cls-1" cx="186" cy="186" r="175"/>
+  <g id="grupo1">
+    <line class="cls-3" x1="46.73" y1="286.34" x2="190.81" y2="187"/>
+    <line class="cls-3" x1="334.89" y1="286.34" x2="190.81" y2="187"/>
+    <line class="cls-3" x1="190.29" y1="187" x2="190.3" y2="118.66"/>
+  </g>
+  <rect class="cls-6" x="149.62" y="125.32" width="44.73" height="20.04" transform="translate(-46.15 117.76) rotate(-33.59)"/>
+  <line class="cls-2" x1="147.58" y1="148.17" x2="200.27" y2="148.17"/>
+  <path class="cls-2" d="m190.29,158.19c.2-13.17.2-26.36,0-39.53"/>
+  <rect class="cls-4" x="176.57" y="99.07" width="22.09" height="9.82"/>
+  <line class="cls-5" x1="181.58" y1="115.98" x2="144.77" y2="140.68"/>
+</svg>

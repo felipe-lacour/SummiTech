@@ -18,7 +18,7 @@ header{
   &-nombre{
     color: white;
     font-weight: bold;
-    margin: 10px none;
+    margin: 10px 0 5px 0;
 
     &__span{
       color: $rojo;
@@ -72,7 +72,7 @@ header{
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    padding: 1px;
+    padding: 2px;
     box-sizing: border-box;
   }
 }

@@ -14,12 +14,10 @@ header{
     text-align: center;
     width: fit-content;
   }
-
   &-nombre{
     color: white;
     font-weight: bold;
     margin: 10px 0 5px 0;
-
     &__span{
       color: $rojo;
     }

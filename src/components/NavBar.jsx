@@ -1,11 +1,12 @@
+import { NavLink } from "react-router-dom";
 
 export default function NavBar (){
   return(
     <nav className='navbar'>
       <ul className='lista'>
-        <li><a href="#hola">Montaña</a></li>
-        <li><a href="#hola">Esqui</a></li>
-        <li><a href="#hola">Escalada</a></li>
+        <NavLink to={'/category/mountain'}>Montaña</NavLink>
+        <NavLink to={'/category/ski'}>Esqui</NavLink>
+        <NavLink to={'/category/climbing'}>Escalada</NavLink>
       </ul>
     </nav>
   )

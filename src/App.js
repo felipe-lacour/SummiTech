@@ -1,13 +1,14 @@
-import Header from './components/Header.jsx';
-import ItemListContainer from './container/IemListContainer.jsx';
+import { Home } from './views/Home';
 import './App.scss';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <>
-      <Header/>
-      <ItemListContainer greeting={"Bienvenidos a SummiTech, el e-commerce donde todos tus sueños montañistas se harán realidad."}/>
-    </>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/category/:id' element={<Home/>}/>
+      <Route path='*' element={<div>Tomatelas</div>}/>
+    </Routes>
   );
 }
 

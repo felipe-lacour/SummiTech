@@ -2,12 +2,13 @@ $negro: #231f20;
 $rojo: #ed1c24;
 
 body{
-  height: 100vh;
+  height: fit-content;
   margin: 0px;
   background-image: url('../img/layered-waves-haikei.svg');
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 100%;
+  background-attachment: fixed;
 }
 
 *{

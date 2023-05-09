@@ -5,6 +5,5 @@ export default function CartWidget ({cart, num}) {
         <img src={cart} alt="Icono Canasta" className="mochila-button"/>
       <span>{num}</span>  
     </div>
-
   )
 }

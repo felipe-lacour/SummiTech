@@ -1,6 +1,3 @@
-
-
-
 export default function ItemListContainer ({children}){
   return(
     <div className="mt-6 w-full flex justify-around h-screen overflow-y-scroll mb-12 p-6">

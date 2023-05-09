@@ -4,9 +4,14 @@ import { Link } from 'react-router-dom'
 
 
 const item = (list) => {
+  const basket =[]
   function handleAdd (e, product) {
     e.preventDefault()
-    console.log(product)
+    const found = basket.find(i => i.id === product.id)
+    if(!found){
+      basket.push({...product, amount: 1})
+      console.log(basket)
+    }
   }
 
   return(

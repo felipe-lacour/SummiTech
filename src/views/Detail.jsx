@@ -1,11 +1,11 @@
 import Header from "../components/Header"
-import { ItemDetailContainer } from "../components/ItemDetailContainer"
+import { ItemDetail } from "../components/ItemDetail"
 
-export const Detail = ({list}) => {
+export const Detail = () => {
   return(
     <>
       <Header/>
-      <ItemDetailContainer list={list}/>
+      <ItemDetail/>
     </>
   )
 }

@@ -37,7 +37,7 @@ const listFilter = ({list, categoryId}) => {
 export const ItemList = ({list}) => {
   const categoryId = useRouterParams()
   return(
-    <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-y-8 gap-x-8 p-6 mx-auto h-fit">
+    <>
       {!list.length ?
         (
           <div className="absolute top-1/2 left-1/2 h-14 w-14">
@@ -47,6 +47,6 @@ export const ItemList = ({list}) => {
           :
           (listFilter({list, categoryId}))
       }
-    </div>
+    </>
   )
 }

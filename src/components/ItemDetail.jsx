@@ -3,7 +3,7 @@ import { useRouterParams } from "../customHooks/useRouterParams"
 import spinner from '../img/spinner-3-svgrepo-com.svg'
 import { useState, useEffect } from "react"
 
-export const ItemDetailContainer = () => {
+export const ItemDetail = () => {
   const [list, setList] = useState([])
   if(!list.length){
     setList(productList)

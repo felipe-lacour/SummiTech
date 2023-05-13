@@ -11,7 +11,7 @@ export function useList (productList, n){
     })
 
     productPromise.then(result => setList(result))
-  }, [productList])
+  }, [productList, n])
 
   return list
 }

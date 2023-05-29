@@ -1,12 +1,12 @@
-import productList from '../json/data.json'
-import { useRouterParams } from "../customHooks/useRouterParams"
-import spinner from '../img/spinner-3-svgrepo-com.svg'
+
+import { useRouterParams } from "../../customHooks/useRouterParams"
+import spinner from '../../img/spinner-3-svgrepo-com.svg'
 import { ItemDetail } from "./ItemDetail"
-import Header from "./Header"
-import { useList } from "../customHooks/useList"
+import Header from "../Header/Header"
+import { useList } from "../../customHooks/useList"
 
 export function ItemDetailContainer (){
-  let list = useList(productList, 1000)
+  let list = useList()
   const itemId = useRouterParams()
   const item = list.find(i => i.id === itemId)
   return(

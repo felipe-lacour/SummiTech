@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
-import logo from '../img/summittech-logo.svg';
-import CartWidget from "./CartWidget.jsx";
-import mochilarojo from '../img/mochila-ed1c24.svg';
+import logo from '../../img/summittech-logo.svg';
+import CartWidget from "../Cart/CartWidget.jsx";
+import mochilarojo from '../../img/mochila-ed1c24.svg';
 
 export default function NavBar (){
   return(
@@ -19,7 +19,7 @@ export default function NavBar (){
         <NavLink to={'/category/ski'}>Esqui</NavLink>
         <NavLink to={'/category/climbing'}>Escalada</NavLink>
       </ul>
-      <CartWidget numero={1} cart={mochilarojo} num={1}/>
+      <CartWidget cart={mochilarojo}/>
     </nav>
   )
 }

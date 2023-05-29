@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react"
+import { useContext } from "react"
+import { useState } from "react"
+import {CartContext} from '../../context/CartContext'
 
 
 export function ItemCount ({ item, itemId}) {
-  const [basket, setBasket] = useState([]);
+  const {basket, setBasket} = useContext(CartContext)
   const [amount, setAmount] = useState(1)
   function handleIncrease() {
     setAmount(n => n + 1)
@@ -17,29 +19,31 @@ export function ItemCount ({ item, itemId}) {
   function handleBasket() {
     const found = basket.find(i => i.id === itemId)
     if(!found){
-      const itemObj = item
-      itemObj.amount = amount
+      const itemObj = { ...item, data:{...item.data, amount: amount }};
       setBasket([...basket, itemObj])
     } else {
       const updatedBasket = basket.map(i => {
         if(i.id === itemId){
-          if(!i.amount){
-            return ({...i, amount: amount}) 
+          if (i.data && i.data.amount) {
+            return { ...i, data: { ...i.data, amount: i.data.amount + amount } }
           } else {
-            return({...i, amount: i.amount + amount})
+            return { ...i, data: { ...i.data, amount: amount } }
           }
         }
         return i
       })
+
       setBasket(updatedBasket)
     }
   }
-  useEffect(() => {
-    setTimeout(() => {
-      console.log(basket);
-      console.log(basket[0]?.amount);
-    }, 0);
-  }, [basket]);
+  // useEffect(() => {
+  //   const basketItem = basket.find(i => i.id === item.id)
+  //   const indexBasket = basket.indexOf(basketItem)
+  //   setTimeout(() => {
+  //     console.log(basket);
+  //     console.log(basket[indexBasket]?.data.amount);
+  //   }, 0);
+  // }, [basket, item]);
 
   return(
     <>

@@ -1,17 +1,22 @@
 import { useState, useEffect } from "react"
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 
 
-export function useList (productList, n){
+export function useList (){
   const [list, setList] = useState([])
   useEffect(() => {
-    const productPromise = new Promise ((res, rej) => {
-      setTimeout(()=>{
-        res(productList);
-      }, n)
+    const db = getFirestore()
+    
+    const refCollection = collection(db, 'items')
+    getDocs(refCollection).then(snapshot => {
+      if(snapshot.size === 0) console.log('no results')
+      else {
+        const newList = snapshot.docs.map(doc => {
+          return { id: doc.id, data: doc.data() }
+        })
+        setList(newList)
+      }
     })
-
-    productPromise.then(result => setList(result))
-  }, [productList, n])
-
+  }, [])
   return list
 }

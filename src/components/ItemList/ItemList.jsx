@@ -1,4 +1,4 @@
-import spinner from '../img/spinner-3-svgrepo-com.svg'
+import spinner from '../../img/spinner-3-svgrepo-com.svg'
 import { Item } from './Item'
 
 export const ItemList = ({list}) => {

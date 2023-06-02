@@ -29,9 +29,11 @@ export function ItemDetailContainer (){
               <button onClick={() => navigate('/')} className='p-2 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 active:bg-red-800 transition-all'>Volver al Catalogo</button>
             </div>
           ) : (
-            <div>
+            <div >
               <ItemDetail item={item} itemId={itemId}/>
-              <Footer/>
+              <div className="lg:absolute lg:bottom-0 lg:w-full">
+                <Footer/>
+              </div>
             </div>
             )
           )}

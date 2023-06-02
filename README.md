@@ -1,3 +1,7 @@
+# **PARA LA UTILIZACION DE LA APLICACION SE PUEDE GENERAR UN USUARIO O UTILIZAR EL USUARIO DE PRUEBA:**
+`prueba@email.com`
+`coder.prueba`
+
 # Getting Started with Create React App
 
 Este proyecto fue iniciado con [Create React App](https://github.com/facebook/create-react-app).

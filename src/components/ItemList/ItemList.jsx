@@ -1,6 +1,6 @@
 import spinner from '../../img/spinner-3-svgrepo-com.svg'
 import { Item } from './Item'
-import { Footer } from "../Footer/Footer";
+import { Footer } from '../Footer/Footer'
 
 export const ItemList = ({list}) => {
   return(

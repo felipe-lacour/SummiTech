@@ -1,12 +1,11 @@
-# **PARA LA UTILIZACION DE LA APLICACION SE PUEDE GENERAR UN USUARIO O UTILIZAR EL USUARIO DE PRUEBA:**
-`prueba@email.com`
-`coder.prueba`
+**PARA LA UTILIZACION DE LA APLICACION SE PUEDE GENERAR UN USUARIO O UTILIZAR EL USUARIO DE PRUEBA:**
+email: `prueba@email.com`
 
-# Getting Started with Create React App
+password: `coder.prueba`
 
 Este proyecto fue iniciado con [Create React App](https://github.com/facebook/create-react-app).
 
-## Informacion del Proyecto
+# Informacion del Proyecto
 Este proyecto fue realizado a lo largo de la cursada del curso de React JS de CoderHouse. El mismo, tiene las siguientes implementaciones:
 
 ### `<LogIn/>`
@@ -27,7 +26,7 @@ foto, precio, selector de cantidad, etc).\
 Es aqui donde figura el componente `<AddItemButton/>`, el cual en su clickeo agrega la cantidad seleccionada de items al carrito.
 
 
-## Available Scripts
+# Codigos Disponibles
 
 En el directorio del proyecto puedeses correr:
 

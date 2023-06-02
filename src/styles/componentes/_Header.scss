@@ -1,6 +1,5 @@
 header{
   background-color: $negro;
-  padding: 0 10vh;
   position: relative;
   @include flex (row, flex-start, center);
 }
@@ -36,13 +35,14 @@ header{
   min-width: 200px;
   list-style: none;
 
-  a{
+  .a{
     color: #ed1c24;    
     text-decoration: none;
     font-weight: bold;
     padding: 15px;
     border-radius: 5px;
     transition: 0.15s;
+    white-space: nowrap;
 
     &:hover{
       color: #231f20;

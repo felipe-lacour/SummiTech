@@ -1,8 +1,7 @@
-import { ItemCount } from "./ItemCount"
+import { ItemQuantitySelector } from "./ItemQuantitySelector"
 
 
 export const ItemDetail = ({item, itemId}) => {
-
   return(
     <div key={item.id} className="flex flex-col md:flex-row justify-center items-center mt-12 max-w-[90%] md:max-w-6xl mx-auto gap-12 bg-gray-100 p-2 rounded-xl border border-gray-400 shadow-2xl mb-12">
       <div className="md:w-1/3 flex justify-center">
@@ -14,7 +13,7 @@ export const ItemDetail = ({item, itemId}) => {
         <h2 className="font-bold text-red-600 text-2xl text-start p-4 border-t border-slate-600">${item.data.price}</h2>
         <p className="text-lg text-justify p-4 border-t border-slate-600">{item.data.description}</p>
         <div className="flex flex-col md:flex-row justify-around p-4 gap-4 items-center">
-        <ItemCount item={item} itemId={itemId}/>
+          <ItemQuantitySelector item={item} itemId={itemId}/>
         </div>
       </div>
     </div>

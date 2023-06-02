@@ -1,7 +1,6 @@
 import { CartContext } from '../../context/CartContext'
 import { useContext } from 'react'
 import Header from '../Header/Header'
-
 import { Link } from 'react-router-dom'
 import { CartItem } from './CartItem'
 import { useState } from 'react'
@@ -32,7 +31,7 @@ export default function Cart() {
           </div>
         </div>
       ) : (
-      <div className="mx-auto max-w-2xl px-4 pb-24 pt-16 sm:px-6 lg:max-w-7xl lg:px-8 min-h-screen pb-16">
+      <div className="mx-auto max-w-2xl px-4 pb-24 pt-16 sm:px-6 lg:max-w-7xl lg:px-8 min-h-screen">
         <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Carrito</h1>
         <div className="mt-12 lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16">
           <section aria-labelledby="cart-heading" className="lg:col-span-7 max-h-[600px] overflow-y-scroll rounded-lg">

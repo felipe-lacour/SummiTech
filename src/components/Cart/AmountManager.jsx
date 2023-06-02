@@ -1,7 +1,7 @@
 import { CartContext } from '../../context/CartContext'
 import { useContext } from 'react'
 
-export function AmountMAnager ({amount, id}) {
+export function AmountManager ({amount, id}) {
   const {basket, setBasket} = useContext(CartContext)
   function handleLess () {
     const newBasket = basket.map(i => {

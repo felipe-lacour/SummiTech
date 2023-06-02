@@ -14,7 +14,7 @@ export const Footer = () => {
         </div>
         <div className="mt-8 md:order-1 md:mt-0">
           <p className="text-center text-xs leading-5 text-red-500">
-            Felipe lacour Hughes. SummiTech. CoderHouse, comision 39675.
+            Felipe Lacour Hughes. SummiTech. CoderHouse, comision 39675.
           </p>
         </div>
       </div>

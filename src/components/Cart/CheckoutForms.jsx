@@ -38,34 +38,32 @@ export const CheckoutForms = ({handleCheckout, setId, basket, total, setData}) =
   }
 
   return(
-    <div className='max-w-2xl bg-gray-50 p-6 rounded-lg absolute top-1/3 left-1/2 -translate-x-1/2 -transalte-y-1/2 w-4/5'>
+    <div className='max-w-2xl bg-gray-50 p-6 rounded-lg fixed top-16 md:top-1/3 left-1/2 -translate-x-1/2 -transalte-y-1/2 w-4/5'>
     <div className='p-1 border-red-600 border-2 rounded-full h-fit cursor-pointer hover:shadow-md transition-shadow absolute top-4 right-4' onClick={() => handleCheckout()}>
       <img className='w-6' src={redCross} alt="Red Cross" />
     </div>
     <h2 className="font-bold text-xl">Checkout</h2>
     <div className="flex flex-col gap-4 my-6">
-      <div className='flex gap-4'>
-        <div className="w-1/2">
+      <div className='flex flex-col md:grid md:grid-cols-2 gap-4'>
+        <div >
           <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">Email</label>
           <div className="mt-2">
             <input type="email" name="email" id="email" className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6" placeholder="you@example.com" onChange={() => setMail(loggedIn.email)} value={loggedIn.email}/>
           </div>
         </div>
-        <div className="w-1/2">
+        <div >
           <label htmlFor="nombre" className="block text-sm font-medium leading-6 text-gray-900">Nombre Completo</label>
           <div className="mt-2">
             <input type="text" name="nombre" id="nombre" className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6" placeholder="Nombre Completo" onChange={(event) => setNombre(event.target.value)}/>
           </div>
         </div>
-      </div>
-      <div className='flex gap-4'>
-        <div className="w-1/2">
+        <div >
           <label htmlFor="phone" className="block text-sm font-medium leading-6 text-gray-900">Telefono Celular</label>
           <div className="mt-2">
             <input type="tel" name="phone" id="phone" className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6" placeholder="Telefono Celular" onChange={(event) => setMobile(event.target.value)}/>
           </div>
         </div>
-        <div className="w-1/2">
+        <div >
           <label htmlFor="adress" className="block text-sm font-medium leading-6 text-gray-900">Direccion</label>
           <div className="mt-2">
             <input type="text" name="address" id="address" className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6" placeholder="Ingrese su Direccion" onChange={(event) => setAddress(event.target.value)}/>

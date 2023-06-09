@@ -5,7 +5,7 @@ import { AddItemButton } from "./AddItemButton"
 
 
 export function ItemQuantitySelector ({ item, itemId}) {
-  const {basket, setBasket} = useContext(CartContext)
+  const {handleBasket} = useContext(CartContext)
   const [amount, setAmount] = useState(1)
   function handleIncrease() {
     setAmount(n => n + 1)
@@ -17,27 +17,6 @@ export function ItemQuantitySelector ({ item, itemId}) {
     }
   }
 
-  function handleBasket() {
-    const found = basket.find(i => i.id === itemId)
-    if(!found){
-      const itemObj = { ...item, data:{...item.data, amount: amount }};
-      setBasket([...basket, itemObj])
-    } else {
-      const updatedBasket = basket.map(i => {
-        if(i.id === itemId){
-          if (i.data && i.data.amount) {
-            return { ...i, data: { ...i.data, amount: i.data.amount + amount } }
-          } else {
-            return { ...i, data: { ...i.data, amount: amount } }
-          }
-        }
-        return i
-      })
-
-      setBasket(updatedBasket)
-    }
-  }
-
   return(
     <>
       <div className="flex border-slate-400 border items-center rounded-lg overflow-hidden w-fit">
@@ -45,7 +24,7 @@ export function ItemQuantitySelector ({ item, itemId}) {
         <p className="w-40">{amount}</p>
         <button className="p-2 bg-red-600 font-bold text-gray-100 hover:opacity-80 active:opacity-60" onClick={handleIncrease}>+</button>
       </div>
-      <AddItemButton onClick={handleBasket}/>
+      <AddItemButton onClick={() => handleBasket(item, itemId, amount)}/>
     </>
   )
 }

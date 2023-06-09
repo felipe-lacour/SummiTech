@@ -4,7 +4,7 @@ import { CheckoutForms } from './CheckoutForms'
 import { Receipt } from './Receipt'
 
 
-export const Checkout = ({handleCheckout, total, basket, setBasket}) => {
+export const Checkout = ({handleCheckout, total, basket}) => {
   const [id, setId] = useState()
   const [data, setData] = useState()
   const [goBack, setGoBack] = useState(false);
@@ -22,7 +22,7 @@ export const Checkout = ({handleCheckout, total, basket, setBasket}) => {
       </>
     ) : (
       <>
-        <Receipt id={id} data={data} setBasket={setBasket} setGoBack={setGoBack}/>
+        <Receipt id={id} data={data} setGoBack={setGoBack}/>
       </>
     )}
     </>

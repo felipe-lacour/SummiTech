@@ -1,22 +1,12 @@
-import { getAuth, signOut } from "firebase/auth";
 import { CartContext } from "../../context/CartContext";
 import { useContext } from "react";
+import { LogInContext } from "../../context/LogInContext";
 
-export const SignOut = ({setLoggedIn}) => {
-  const { setBasket } = useContext(CartContext)
-
-  const handleSignOut = (e) => {
-    e.preventDefault();
-    const auth = getAuth();
-    signOut(auth).then(() => {
-      setBasket([])
-      setLoggedIn(false)
-    }).catch((error) => {
-      console.log(error)
-    });
-  }
+export const SignOut = () => {
+  const { empty } = useContext(CartContext)
+  const {handleSignOut} = useContext(LogInContext)
 
   return(
-    <button onClick={(e) => handleSignOut(e)} className="a">Sign Out</button>
+    <button onClick={(e) => handleSignOut({e, empty})} className="a">Sign Out</button>
   )
 }

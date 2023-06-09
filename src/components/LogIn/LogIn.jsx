@@ -9,6 +9,7 @@ import { LogInButton } from "./LogInButton";
 import { SignInButton } from "./SignInButton";
 
 export const LogIn = () => {
+  const {setUser} = useContext(LogInContext)
   let user;
   let value;
 
@@ -22,7 +23,6 @@ export const LogIn = () => {
     email: '',
     password: ''
   })
-  const {setLoggedIn} = useContext(LogInContext)
 
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
@@ -36,11 +36,12 @@ export const LogIn = () => {
     user = JSON.parse(value);
   }
 
+
   useEffect(() => {
     if (user != null) {
-      setLoggedIn(user);
+      setUser(user)
     }
-  }, [user, setLoggedIn]);
+  }, [user, setUser]);
 
   return(
     <div>
@@ -53,7 +54,7 @@ export const LogIn = () => {
             <input type="email" placeholder="Repeat Email" value={signIn.repeatEmail} onChange={(e) => setSignIn({...signIn, repeatEmail: e.target.value})}className={`${signIn.email !== '' ?(signIn.repeatEmail === signIn.email? "outline-green-600" : "outline-red-600 ") : ''} p-2 border-b`} autoComplete="email"/>
             <input type="password" placeholder="Password" value={signIn.password} onChange={(e) => setSignIn({...signIn, password: e.target.value})} required className="p-2 border-b outline-none" autoComplete="password"/>
             <input type="password" placeholder="Repeat Password" value={signIn.repeatPassword} onChange={(e) => setSignIn({...signIn, repeatPassword: e.target.value})} className={`${signIn.password !== '' ?(signIn.repeatPassword === signIn.password? "outline-green-600" : "outline-red-600") : ''} p-2`} autoComplete="password"/>
-            <SignInButton user={user} email={signIn.email} password={signIn.password} setLoggedIn={setLoggedIn}/>
+            <SignInButton user={user} email={signIn.email} password={signIn.password}/>
           </form>
         </div>
         <div className="flex flex-col py-6 my-12 w-fit border rounded-xl bg-white mx-auto sm:mx-0 h-fit">
@@ -61,7 +62,7 @@ export const LogIn = () => {
           <form action="" className="flex flex-col">
             <input type="email" placeholder="Email" value={logIn.email} onChange={(e) => setLogIn({...logIn, email: e.target.value})}  className="p-2 w-80 border-b outline-none" autoComplete="email"/>
             <input type="password" placeholder="Password" value={logIn.password} onChange={(e) => setLogIn({...logIn, password: e.target.value})}  className="p-2 w-80 outline-none" autoComplete="password"/>
-            <LogInButton emailLog={logIn.email} passwordLog={logIn.password} setLoggedIn={setLoggedIn} user={user}/>
+            <LogInButton emailLog={logIn.email} passwordLog={logIn.password} user={user}/>
           </form>
         </div>
       </div>

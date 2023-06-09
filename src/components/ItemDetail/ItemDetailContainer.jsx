@@ -7,11 +7,19 @@ import { Footer } from "../Footer/Footer"
 import { useItem } from "../../customHooks/useItem"
 
 import { useNavigate } from "react-router-dom"
+import { useContext } from "react"
+import { LogInContext } from "../../context/LogInContext"
+import {LogIn} from '../LogIn/LogIn'
 
 export function ItemDetailContainer (){
   const itemId = useRouterParams()
   const item = useItem(itemId)
   const navigate = useNavigate()
+  const {loggedIn} = useContext(LogInContext)
+
+  if(!loggedIn){
+    return <LogIn />
+  }
 
 
   

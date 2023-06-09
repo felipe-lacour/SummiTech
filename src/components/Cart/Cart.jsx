@@ -6,16 +6,24 @@ import { CartItem } from './CartItem'
 import { useState } from 'react'
 import { Checkout } from './Checkout'
 import { Footer } from '../Footer/Footer'
+import { LogInContext } from "../../context/LogInContext"
+import {LogIn} from '../LogIn/LogIn'
 
 export default function Cart() {
-  const {basket, setBasket} = useContext(CartContext)
+  const {basket} = useContext(CartContext)
   let total = 0
   basket.forEach(i => total = total + (i.data.amount * i.data.price))
   const [visualizedCheckout, setVisualizedCheckout] = useState(false)
+  const {loggedIn} = useContext(LogInContext)
 
   const handleCheckout = () => {
     setVisualizedCheckout(prev => !prev)
   }
+
+  if(!loggedIn){
+    return <LogIn />
+  }
+
   return (
     <div>
       <Header/>
@@ -64,7 +72,7 @@ export default function Cart() {
         </div>
       </div>
       )}
-      {visualizedCheckout && <Checkout handleCheckout={handleCheckout} total={total.toFixed(2)} basket={basket} setBasket={setBasket}/>}
+      {visualizedCheckout && <Checkout handleCheckout={handleCheckout} total={total.toFixed(2)} basket={basket}/>}
       {basket.length !== 0 && <Footer/>}
     </div>
   )

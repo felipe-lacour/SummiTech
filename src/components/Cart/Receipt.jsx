@@ -1,6 +1,12 @@
-export const Receipt = ({id, data, setBasket, setGoBack}) => {
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
+
+
+export const Receipt = ({id, data, setGoBack}) => {
+  const {empty} = useContext(CartContext)
+
   const handleGoBack = () => {
-    setBasket([]);
+    empty();
     setGoBack(true);
   }
 

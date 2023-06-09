@@ -1,11 +1,8 @@
 import { AmountManager } from './AmountManager'
 import cross from '../../img/cross.svg'
 import { RemoveItem } from './RemoveItem'
-import { CartContext } from '../../context/CartContext'
-import { useContext } from 'react'
 
 export const CartItem = ({product}) => {
-  const {basket, setBasket} = useContext(CartContext)
   return(
     <li className="flex py-6 px-2 sm:py-10 bg-white relative">
     <div className="flex-shrink-0">
@@ -28,7 +25,7 @@ export const CartItem = ({product}) => {
         </div>
       </div>
     </div>
-    <RemoveItem id={product.id} basket={basket} setBasket={setBasket}/>
+    <RemoveItem id={product.id}/>
   </li>
   )
 }

@@ -26,7 +26,6 @@ const CartContextProvider = ({ children }) => {
         }
         return i
       })
-
       setBasket(updatedBasket)
     }
   }
